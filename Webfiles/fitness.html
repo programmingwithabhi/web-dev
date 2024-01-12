@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator In JavaScript</title>
+
+  <!-- <link rel="stylesheet" href="page1.css"> -->
+  <style>
+body{
+
+            
+            font-family: 'PT Sans', sans-serif;
+
+            color: rgb(9, 4, 4);
+            padding: 0px;
+            margin:0px;
+            background: url(cal.jpg.jpg);
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .left{
+            line-height: 1;
+            font-size: 60px;
+            
+            display: inline-block;
+            position:absolute;
+            left:50px;
+            top:13px;
+        }
+        .left img{
+            width: 100px;
+            
+           
+           border-radius: 40px;
+           padding: 10px 2px;
+           margin: 10px 2px;
+
+            
+
+        }
+    
+        .center{
+            display: block;
+            width: 40%;
+            margin:20px auto;
+            /* border-radius: 8px;
+            border:2px solid rgb(237, 237, 237); */
+
+
+
+        }
+        .right{
+            display:block;
+            
+            padding: 30px;
+            position: absolute;
+            right:35px;
+            top:13px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            
+
+
+        }
+        .navbar{
+            display: inline-block;
+        }
+        .navbar li{
+            display: inline-block;
+            font-size: 17px;
+        }
+        .navbar li a{
+            text-decoration: none;
+            padding:15px 14px;
+            font-family: 'Times New Roman', Times, serif;
+            color:#131ccc;
+            
+        }
+        .navbar li a:hover{
+            color:rgb(162, 48, 82);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-decoration: underline;
+            font-size: 20px;
+        }
+        .navbar li a.active{
+            color:rgb(229, 175, 122);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-decoration: underline;
+        }
+        
+
+    body {
+      margin: 0;
+      box-sizing: content-box;
+      font-family: sans-serif;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      padding-right: 420px;
+      padding: px;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+      /* background-color: #e0e0e0; */
+    }
+
+    .bmi-calculator {
+      border-radius: 8px;
+      background-color: #bce6f9;
+    text-align: center;
+    margin-bottom: 130px;
+    margin-left: 450px;
+      padding: 20px;
+      width: 400px;
+      height: 300px;
+      box-shadow: 5px 5px 10px #7bdaf7,
+        -5px -5px 10px #82caeb;
+    }
+
+    h1 {
+      margin: 0 0 10px 0;
+      text-align: center;
+    }
+
+    .input {
+      margin: 10px 0;
+    }
+
+    .input input {
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      height: 20px;
+    }
+
+    .input input:focus {
+      outline: none;
+    }
+
+    .calculate {
+      display: block;
+      margin: 0 auto;
+      padding: 10px;
+      border: none;
+      border-radius: 2px;
+      background-color: #e4c495;
+      width: 100%;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 5px 5px 10px #c1c1c1,
+        -5px -5px 10px #ffffff;
+    }
+
+    .bmi-status {
+      position: absolute;
+      top: 10px;
+      right: 800px;
+    margin: 320px;
+    width: 20%;
+    height: 60%;
+    }
+
+    .bmi-status div {
+      margin: 0;
+      padding: 5px;
+      font-size: 15px;
+      font-weight: normal;
+    }
+
+    .Underweight {
+      background-color: #ffc0cb;
+    }
+
+    .Normal {
+      background-color: #90ee90;
+    }
+
+    .Overweight {
+      background-color: #ffa07a;
+    }
+
+    .Obese {
+      background-color: #ff0000;
+    }
+
+    .Underweight,
+    .Normal,
+    .Overweight,
+    .Obese {
+      font-weight: bold;
+      margin-top: 20px;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="left">
+            <!-- left box for logo -->
+            <!-- <img src="logo3.jpg" alt="no found"> -->
+            <!-- <div style="font-size: 14px; color: rgb(20, 208, 255);">
+                fitness</div> -->
+
+        </div>
+        <div class="center">
+            <!-- center box for navigation  -->
+            <ul class="navbar">
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="about.html" class="actve">ABOUT US</a></li>
+                <li><a href="fitness.html" class="actie">FITNESS CALCULATOR</a></li>
+                <!-- <li><a href="contact.html" class="activ">CONTACT US</a></li>
+                <li><a href="login.html" class="ac">LOGIN </a></li>
+                <li><a href="exit.html" class="av">EXIT PAGE</a></li> -->
+            </ul>
+
+        </div>
+        <div class="right">
+            <!-- right box for buttons -->
+            <!-- <button class="btn">CALL US </button>
+            <button class="btn">EMAIL US</button> -->
+            <button class="btn1">Login</button>
+
+      </div>
+    
+  <div class="container">
+    <div class="bmi-calculator">
+      <h1>BMI Calculator</h1>
+      <div class="input">
+        <label for="height">Height (cm):</label>
+        <input type="text" id="height" placeholder="Height in cm">
+      </div>
+      <div class="input">
+        <label for="weight">Weight (kg):</label>
+        <input type="text" id="weight" placeholder="Weight in kg">
+      </div>
+      <button type="submit" class="calculate">Check BMI</button>
+      <div class="result"></div>
+    </div>
+    <div class="bmi-status">
+      <div class="Underweight">Underweight: 0 - 18.5</div>
+      <div class="Normal">Normal: 18.5 - 25</div>
+      <div class="Overweight">Overweight: 25 - 30</div>
+      <div class="Obese">Obese: 30 - 35</div>
+    </div>
+  </div>
+
+</div>
+
+  <script>
+    // select the calculate button
+    var calculate = document.querySelector('.calculate');
+
+    // attach event listener to the button
+    calculate.addEventListener('click', findBMI);
+
+    // function to find the BMI
+    function findBMI() {
+      var height = +document.querySelector('#height').value;
+      var weight = +document.querySelector('#weight').value;
+      // check height & weight are a valid number
+      if (height <= 0 || weight <= 0 || isNaN(height) || isNaN(weight)) {
+        alert('Please fill all fields with valid numbers');
+        return;
+      }
+      // convert height to meters
+      height = height / 100;
+      var bmi = weight / (height * height);
+      showResult(bmi);
+    }
+
+    // function to show the result
+    function showResult(bmi) {
+      var result = document.querySelector('.result');
+      var bmiStatus;
+      if (bmi < 18.5) {
+        bmiStatus = 'Underweight';
+      } else if (bmi < 25) {
+        bmiStatus = 'Normal';
+      } else if (bmi < 30) {
+        bmiStatus = 'Overweight';
+      } else {
+        bmiStatus = 'Obese';
+      }
+      result.innerHTML = `<div class=${bmiStatus}>Your BMI is ${bmi.toFixed(2)} and you are ${bmiStatus}.</div>`;
+    }
+  </script>
+</body>
+
+</html>

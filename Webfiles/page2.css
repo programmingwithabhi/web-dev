@@ -1,0 +1,78 @@
+body{
+
+    /* font-family: 'Roboto Slab', serif; */
+    font-family: 'PT Sans', sans-serif;
+
+    color: rgb(9, 4, 4);
+    padding: 0px;
+    margin:0px;
+    background: url(about-img.jpg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.left{
+    line-height: 1;
+    font-size: 60px;
+    /* border:2px solid red; */
+    display: inline-block;
+    position:absolute;
+    left:50px;
+    top:13px;
+}
+.left img{
+    width: 75px;
+    /* filter: invert(100%);  */
+    filter:contrast(100%); 
+   border-radius: 12px;
+   padding: 2px -2px;
+   margin: 1px 2px;
+
+    
+
+}
+
+.center{
+    display: block;
+    width: 40%;
+    margin:20px auto;
+    border-radius: 8px;
+    border:2px solid rgb(39, 178, 237);
+
+
+
+}
+.right{
+    display:inline-block;
+    /* border:2px solid rgb(104, 10, 55); */
+    position: absolute;
+    right:35px;
+    top:13px;
+
+
+}
+.navbar{
+    display: inline-block;
+}
+.navbar li{
+    display: inline-block;
+    font-size: 16px;
+}
+.navbar li a{
+    text-decoration: none;
+    padding:15px 14px;
+    font-family: 'Times New Roman', Times, serif;
+    color:rgb(90, 26, 48);
+    
+}
+.navbar li a:hover{
+    color:rgb(162, 48, 82);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+    font-size: 20px;
+}
+.navbar li a.active{
+    color:rgb(229, 175, 122);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+}
